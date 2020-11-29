@@ -39,10 +39,16 @@ class Offer
      */
     private $applications;
 
+    /**
+     * @ORM\OneToMany(targetEntity=ApplicantOffer::class, mappedBy="offer_id")
+     */
+    private $applicantOffers;
+
     public function __construct()
     {
         $this->applicants = new ArrayCollection();
         $this->applications = new ArrayCollection();
+        $this->applicantOffers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -131,5 +137,35 @@ class Offer
     public function __toString()
     {
         return (string) $this->name;
+    }
+
+    /**
+     * @return Collection|ApplicantOffer[]
+     */
+    public function getApplicantOffers(): Collection
+    {
+        return $this->applicantOffers;
+    }
+
+    public function addApplicantOffer(ApplicantOffer $applicantOffer): self
+    {
+        if (!$this->applicantOffers->contains($applicantOffer)) {
+            $this->applicantOffers[] = $applicantOffer;
+            $applicantOffer->setOfferId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeApplicantOffer(ApplicantOffer $applicantOffer): self
+    {
+        if ($this->applicantOffers->removeElement($applicantOffer)) {
+            // set the owning side to null (unless already changed)
+            if ($applicantOffer->getOfferId() === $this) {
+                $applicantOffer->setOfferId(null);
+            }
+        }
+
+        return $this;
     }
 }
