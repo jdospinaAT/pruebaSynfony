@@ -34,22 +34,35 @@ class Applicant
      */
     private $offer_id;
 
+    /**
+     * Applicant constructor.
+     */
     public function __construct()
     {
         $this->owner = new ArrayCollection();
         $this->offer_id = new ArrayCollection();
     }
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     * @return $this
+     */
     public function setName(string $name): self
     {
         $this->name = $name;
@@ -65,6 +78,10 @@ class Applicant
         return $this->owner;
     }
 
+    /**
+     * @param Offer $owner
+     * @return $this
+     */
     public function addOwner(Offer $owner): self
     {
         if (!$this->owner->contains($owner)) {
@@ -74,6 +91,10 @@ class Applicant
         return $this;
     }
 
+    /**
+     * @param Offer $owner
+     * @return $this
+     */
     public function removeOwner(Offer $owner): self
     {
         $this->owner->removeElement($owner);
@@ -89,6 +110,10 @@ class Applicant
         return $this->offer_id;
     }
 
+    /**
+     * @param ApplicantOffer $offerId
+     * @return $this
+     */
     public function addOfferId(ApplicantOffer $offerId): self
     {
         if (!$this->offer_id->contains($offerId)) {
@@ -99,6 +124,10 @@ class Applicant
         return $this;
     }
 
+    /**
+     * @param ApplicantOffer $offerId
+     * @return $this
+     */
     public function removeOfferId(ApplicantOffer $offerId): self
     {
         if ($this->offer_id->removeElement($offerId)) {

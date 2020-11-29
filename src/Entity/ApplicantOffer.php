@@ -29,16 +29,26 @@ class ApplicantOffer
      */
     private $offer;
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return Applicant|null
+     */
     public function getApplicantId(): ?Applicant
     {
         return $this->applicant;
     }
 
+    /**
+     * @param Applicant|null $applicant_id
+     * @return $this
+     */
     public function setApplicantId(?Applicant $applicant_id): self
     {
         $this->applicant = $applicant_id;
@@ -46,11 +56,18 @@ class ApplicantOffer
         return $this;
     }
 
+    /**
+     * @return Offer|null
+     */
     public function getOfferId(): ?Offer
     {
         return $this->offer;
     }
 
+    /**
+     * @param Offer|null $offer_id
+     * @return $this
+     */
     public function setOfferId(?Offer $offer_id): self
     {
         $this->offer = $offer_id;

@@ -102,7 +102,7 @@ class AppCustomAuthenticator extends AbstractFormLoginAuthenticator implements P
 
         $roles = $token->getUser()->getRoles();
         if ( in_array( 'ROLE_ADMIN', $roles) ) {
-            return new RedirectResponse($this->urlGenerator->generate('company'));
+            return new RedirectResponse($this->urlGenerator->generate('admin'));
         } elseif ( in_array('ROLE_COMPANY', $roles) ) {
             if ( $company = $this->entityManager->getRepository(Company::class)->findOneBy([
                 'owner' => $token->getUser(),

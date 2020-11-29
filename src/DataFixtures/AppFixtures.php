@@ -19,46 +19,46 @@ class AppFixtures extends Fixture
         //generar 5 usuarios
         $user = new User();
         $user->setEmail("admin@admin.com");
-        $user->setRoles((array)'[\"ROLE_ADMIN\"]');
+        $user->setRoles((array)"ROLE_ADMIN");
         //$password = $this->encoder->encodePassword('pass_1234');
         //$user->setPassword($password);
-        $user->setPassword('\$argon2id\$v=19\$m=65536,t=4,p=1\$zHd8/9QmaFCkXITvBXNcKg\$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I');
+        $user->setPassword('$argon2id$v=19$m=65536,t=4,p=1$zHd8/9QmaFCkXITvBXNcKg$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I');
         $user->setIsVerified(1);
         $manager->persist($user);
 
         $user = new User();
         $user->setEmail("aplicante1@aplicant.com");
-        $user->setRoles((array)'[\"ROLE_APPLICANT\"]');
+        $user->setRoles((array)"ROLE_APPLICANT");
         //$password = $this->encoder->encodePassword('pass_1234');
         //$user->setPassword($password);
-        $user->setPassword('\$argon2id\$v=19\$m=65536,t=4,p=1\$zHd8/9QmaFCkXITvBXNcKg\$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I');
+        $user->setPassword('$argon2id$v=19$m=65536,t=4,p=1$zHd8/9QmaFCkXITvBXNcKg$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I');
         $user->setIsVerified(1);
         $manager->persist($user);
 
         $user = new User();
         $user->setEmail("aplicante2@aplicant.com");
-        $user->setRoles((array)'[\"ROLE_APPLICANT\"]');
+        $user->setRoles((array)"ROLE_APPLICANT");
         //$password = $this->encoder->encodePassword('pass_1234');
         //$user->setPassword($password);
-        $user->setPassword('\$argon2id\$v=19\$m=65536,t=4,p=1\$zHd8/9QmaFCkXITvBXNcKg\$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I');
+        $user->setPassword('$argon2id$v=19$m=65536,t=4,p=1$zHd8/9QmaFCkXITvBXNcKg$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I');
         $user->setIsVerified(1);
         $manager->persist($user);
 
         $user = new User();
         $user->setEmail("company1@company.com");
-        $user->setRoles((array)'[\"ROLE_COMPANY\"]');
+        $user->setRoles((array)"ROLE_COMPANY");
         //$password = $this->encoder->encodePassword('pass_1234');
         //$user->setPassword($password);
-        $user->setPassword('\$argon2id\$v=19\$m=65536,t=4,p=1\$zHd8/9QmaFCkXITvBXNcKg\$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I');
+        $user->setPassword('$argon2id$v=19$m=65536,t=4,p=1$zHd8/9QmaFCkXITvBXNcKg$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I');
         $user->setIsVerified(1);
         $manager->persist($user);
 
         $user = new User();
         $user->setEmail("company2@company.com");
-        $user->setRoles((array)'[\"ROLE_COMPANY\"]');
+        $user->setRoles((array)"ROLE_COMPANY");
         //$password = $this->encoder->encodePassword('pass_1234');
         //$user->setPassword($password);
-        $user->setPassword('\$argon2id\$v=19\$m=65536,t=4,p=1\$zHd8/9QmaFCkXITvBXNcKg\$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I');
+        $user->setPassword('$argon2id$v=19$m=65536,t=4,p=1$zHd8/9QmaFCkXITvBXNcKg$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I');
         $user->setIsVerified(1);
         $manager->persist($user);
 

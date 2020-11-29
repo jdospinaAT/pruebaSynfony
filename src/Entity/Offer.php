@@ -44,6 +44,9 @@ class Offer
      */
     private $applicantOffers;
 
+    /**
+     * Offer constructor.
+     */
     public function __construct()
     {
         $this->applicants = new ArrayCollection();
@@ -51,16 +54,26 @@ class Offer
         $this->applicantOffers = new ArrayCollection();
     }
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     * @return $this
+     */
     public function setName(string $name): self
     {
         $this->name = $name;
@@ -68,11 +81,18 @@ class Offer
         return $this;
     }
 
+    /**
+     * @return Company|null
+     */
     public function getOwner(): ?Company
     {
         return $this->owner;
     }
 
+    /**
+     * @param Company|null $owner
+     * @return $this
+     */
     public function setOwner(?Company $owner): self
     {
         $this->owner = $owner;
@@ -88,6 +108,10 @@ class Offer
         return $this->applicants;
     }
 
+    /**
+     * @param Applicant $applicant
+     * @return $this
+     */
     public function addApplicant(Applicant $applicant): self
     {
         if (!$this->applicants->contains($applicant)) {
@@ -98,6 +122,10 @@ class Offer
         return $this;
     }
 
+    /**
+     * @param Applicant $applicant
+     * @return $this
+     */
     public function removeApplicant(Applicant $applicant): self
     {
         if ($this->applicants->removeElement($applicant)) {
@@ -115,6 +143,10 @@ class Offer
         return $this->applications;
     }
 
+    /**
+     * @param Applicant $application
+     * @return $this
+     */
     public function addApplication(Applicant $application): self
     {
         if (!$this->applications->contains($application)) {
@@ -125,6 +157,10 @@ class Offer
         return $this;
     }
 
+    /**
+     * @param Applicant $application
+     * @return $this
+     */
     public function removeApplication(Applicant $application): self
     {
         if ($this->applications->removeElement($application)) {
@@ -134,6 +170,9 @@ class Offer
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return (string) $this->name;
@@ -147,6 +186,10 @@ class Offer
         return $this->applicantOffers;
     }
 
+    /**
+     * @param ApplicantOffer $applicantOffer
+     * @return $this
+     */
     public function addApplicantOffer(ApplicantOffer $applicantOffer): self
     {
         if (!$this->applicantOffers->contains($applicantOffer)) {
@@ -157,6 +200,10 @@ class Offer
         return $this;
     }
 
+    /**
+     * @param ApplicantOffer $applicantOffer
+     * @return $this
+     */
     public function removeApplicantOffer(ApplicantOffer $applicantOffer): self
     {
         if ($this->applicantOffers->removeElement($applicantOffer)) {
