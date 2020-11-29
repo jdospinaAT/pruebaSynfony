@@ -16,7 +16,7 @@ Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered H
     
   Creacion del usuario administrador
 
-    php bin/console doctrine:query:sql "INSERT INTO user (email, roles, password, is_verified) VALUES ('admin@admin.com', '[\"ROLE_ADMIN\"]', '\$argon2id\$v=19\$m=65536,t=4,p=1\$zHd8/9QmaFCkXITvBXNcKg\$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I', 1)
+    php bin/console doctrine:query:sql "INSERT INTO user (email, roles, password, is_verified) VALUES ('admin@admin.com', '[\"ROLE_ADMIN\"]', '\$argon2id\$v=19\$m=65536,t=4,p=1\$zHd8/9QmaFCkXITvBXNcKg\$kLZXWpuUrRH0FOhMaGbX4aZildau7gMym4PUHTTK44I', 1)"
 
     
         

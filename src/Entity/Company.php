@@ -25,7 +25,7 @@ class Company
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $email;
 
@@ -33,12 +33,6 @@ class Company
      * @ORM\OneToMany(targetEntity=Offer::class, mappedBy="owner")
      */
     private $offers;
-
-    /**
-     * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $owner;
 
     public function __construct()
     {
@@ -100,18 +94,6 @@ class Company
                 $offer->setOwner(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getOwner(): ?User
-    {
-        return $this->owner;
-    }
-
-    public function setOwner(User $owner): self
-    {
-        $this->owner = $owner;
 
         return $this;
     }

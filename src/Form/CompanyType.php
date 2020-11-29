@@ -15,7 +15,6 @@ class CompanyType extends AbstractType
         $builder
             ->add('name')
             ->add('email')
-            ->add('owner')
             ->add('save', SubmitType::class, [
                 'label' => 'Guardar',
             ])

@@ -30,7 +30,7 @@ class OfferController extends AbstractController
     }
 
     /**
-     * @Route("/offer/{id}", name="offer_show")
+     * @Route("/profile/offer/{id}", name="offer_show")
      * @param Offer $offer
      * @return Response
      */
@@ -43,7 +43,7 @@ class OfferController extends AbstractController
     }
 
     /**
-     * @Route("/offer/{id}/apply", name="offer_apply")
+     * @Route("/profile/offer/{id}/apply", name="offer_apply")
      * @param Offer $offer
      * @param EntityManagerInterface $entityManager
      * @return RedirectResponse

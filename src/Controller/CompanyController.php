@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CompanyController extends AbstractController
 {
     /**
-     * @Route("/company", name="company")
+     * @Route("/profile/company", name="company")
      * @param EntityManagerInterface $entityManager
      * @return Response
      */
@@ -59,7 +59,7 @@ class CompanyController extends AbstractController
     }
 
     /**
-     * @Route("/company/{id}/offers", name="company_offers")
+     * @Route("/profile/company/{id}/offers", name="company_offers")
      * @param Company $company
      * @return Response
      */
@@ -76,7 +76,7 @@ class CompanyController extends AbstractController
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @return RedirectResponse|Response
-     * @Route("/company/{id}/offers/new", name="offer_new", requirements={"id":"\d+"} )
+     * @Route("/profile/company/{id}/offers/new", name="offer_new", requirements={"id":"\d+"} )
      */
     public function newOffer(Request $request, EntityManagerInterface $entityManager)
     {

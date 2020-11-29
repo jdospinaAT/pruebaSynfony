@@ -1,0 +1,16 @@
+easy_admin:
+  design:
+    menu:
+      - { entity: 'Users', target: '_blank' }
+      - { entity: 'Company', target: '_blank' }
+  entities:
+    class: App\Entity\User
+    form:
+      fields:
+        -   property: 'roles'
+            type: 'choice'
+            type_options:
+              mapped: true
+              expanded: true
+              multiple: true
+              choices: { 'Conseiller': 'ROLE_USER', 'Administrateur': 'ROLE_ADMIN' }
